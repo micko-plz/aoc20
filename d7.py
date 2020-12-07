@@ -44,6 +44,7 @@ bags_to_check = []
 for bag in list_of_bags:
   if bag.name == 'shiny gold':
     bags_to_check.append(bag)
+    break
 
 for bag_i in bags_to_check:
   for bag_t in list_of_bags:
