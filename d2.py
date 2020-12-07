@@ -1,6 +1,8 @@
 input_file = open('/home/mcko_plz/git/aoc20/inputs/d2.txt', 'r')
 inputs = input_file.read().splitlines()
 
+import time
+
 class Entry():
   def __init__(self, string):
     self.min = int(string[:string.find('-')])
@@ -20,18 +22,27 @@ class Entry():
     else:
       return True      
 
+t0 = time.time()
 entries = [Entry(line) for line in inputs]
+t1 = time.time()
+print((t1-t0)*1000, ' ms')
 
 # part1
+t0 = time.time()
 num_valid = 0
 for ent in entries:
   if ent.isValidPart1():
     num_valid += 1
+t1 = time.time()
 print(num_valid)
+print((t1-t0)*1000, ' ms')
 
 # part2
+t0 = time.time()
 num_valid = 0
 for ent in entries:
   if ent.isValidPart2():
     num_valid += 1
+t1 = time.time()
 print(num_valid)
+print((t1-t0)*1000, ' ms')

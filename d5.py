@@ -1,6 +1,8 @@
 input_file = open('/home/mcko_plz/git/aoc20/inputs/d5.txt', 'r')
 seats = input_file.read().splitlines()
 
+import time
+
 def getSeatId(seat):
   row = 0
   col = 0
@@ -25,12 +27,16 @@ def getSeatId(seat):
   return seatId
 
 # part1
+t0 = time.time()
 max_seatId = 0
 for seat in seats:
   max_seatId = max(max_seatId, getSeatId(seat))
+t1 = time.time()
 print(max_seatId)
+print((t1-t0)*1000, ' ms')
 
 # part2
+t0 = time.time()
 seatIds = []
 for seat in seats:
   seatIds.append(getSeatId(seat))
@@ -39,4 +45,6 @@ for testId in range(seatIds[0], seatIds[-1]):
   if (seatIds.count(testId) == 0):
     if (seatIds.count(testId -1) + seatIds.count(testId + 1) == 2):
       print(testId)
+      t1 = time.time()
       break
+print((t1-t0)*1000, ' ms')

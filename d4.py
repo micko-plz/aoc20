@@ -1,6 +1,10 @@
 input_file = open('/home/mcko_plz/git/aoc20/inputs/d4.txt', 'r')
 batch = input_file.read().splitlines()
 
+import string
+import time
+
+t0 = time.time()
 passports_strings = []
 str_tmp = ''
 for i in range(len(batch)):
@@ -10,8 +14,9 @@ for i in range(len(batch)):
     continue
   str_tmp += batch[i] + ' '
 passports_strings.append(str_tmp)
+t1 = time.time()
+print((t1-t0)*1000, ' ms')
 
-import string
 
 class Passport():
   REQ_FIELDS =  ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
@@ -55,15 +60,21 @@ class Passport():
     return True
 
 # part1
+t0 = time.time()
 num_valid = 0
 for p in passports_strings:
   if (Passport(p).isValidPart1()):
     num_valid += 1
+t1 = time.time()
 print(num_valid)
+print((t1-t0)*1000, ' ms')
 
 # part 2
+t0 = time.time()
 num_valid = 0
 for p in passports_strings:
   if (Passport(p).isValidPart2()):
     num_valid += 1
+t1 = time.time()
 print(num_valid)
+print((t1-t0)*1000, ' ms')

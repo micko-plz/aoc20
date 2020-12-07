@@ -2,7 +2,9 @@ input_file = open('/home/mcko_plz/git/aoc20/inputs/d6.txt', 'r')
 lines = input_file.read().splitlines()
 
 import string
+import time
 
+t0 = time.time()
 groups = []
 str_tmp = ''
 for i in range(len(lines)):
@@ -12,8 +14,11 @@ for i in range(len(lines)):
     continue
   str_tmp += lines[i] + ' '
 groups.append(str_tmp)
+t1 = time.time()
+print((t1-t0)*1000, ' ms')
 
 # part1
+t0 = time.time()
 counts_total = 0
 counts_per_group = 0 
 for group in groups:
@@ -22,9 +27,12 @@ for group in groups:
       counts_per_group += 1
   counts_total += counts_per_group
   counts_per_group = 0
+t1 = time.time()
 print(counts_total)
+print((t1-t0)*1000, ' ms')
 
 # part2
+t0 = time.time()
 counts_total = 0
 counts_per_group = 0 
 for group in groups:
@@ -38,5 +46,7 @@ for group in groups:
       counts_per_group+=1
   counts_total+= counts_per_group
   counts_per_group =0
+t1 = time.time()
 print(counts_total)
+print((t1-t0)*1000, ' ms')
 
