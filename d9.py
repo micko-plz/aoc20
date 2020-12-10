@@ -1,4 +1,4 @@
-input_file = open('/home/michael/git/PersonalStuff/aoc20/inputs/d9.txt', 'r')
+input_file = open('inputs/d9.txt', 'r')
 
 import time
 

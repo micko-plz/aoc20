@@ -1,4 +1,4 @@
-input_file = open('/home/michael/git/PersonalStuff/aoc20/inputs/d8.txt', 'r')
+input_file = open('inputs/d8.txt', 'r')
 lines = input_file.read().splitlines()
 
 import time

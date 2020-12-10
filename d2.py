@@ -1,4 +1,4 @@
-input_file = open('/home/mcko_plz/git/aoc20/inputs/d2.txt', 'r')
+input_file = open('inputs/d2.txt', 'r')
 inputs = input_file.read().splitlines()
 
 import time
