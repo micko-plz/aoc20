@@ -34,19 +34,12 @@ def get_parents(ind):
       ind_c += 1
   return parents
 
-t0 = time.time()
 num_ada = len(ints)
-A = np.zeros((num_ada, num_ada))
+A = np.zeros((num_ada, num_ada), dtype=np.int32)
 for i in range(num_ada):
   A[i, get_parents(i)] = 1
-
-A_temp = np.copy(A)
-num_paths = A_temp[0, -1]
-for i in range(num_ada):
-  A_temp = np.matmul(A_temp, A)
-  num_paths += A_temp[0, -1]
-  if num_paths > 0 and A_temp[0, -1] == 0:
-    break
+  
+t0 = time.time()
+print(int(np.linalg.inv(np.identity(num_ada, dtype=np.int32) - A)[0, -1]))
 t1 = time.time()
-print(int(num_paths))
 print((t1-t0)*1000, ' ms')
