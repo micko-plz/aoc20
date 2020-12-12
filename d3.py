@@ -1,4 +1,4 @@
-input_file = open('/home/mcko_plz/git/aoc20/inputs/d3.txt', 'r')
+input_file = open('inputs/d3.txt', 'r')
 world_map = input_file.read().splitlines()
 
 import time

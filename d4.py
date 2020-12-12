@@ -1,4 +1,4 @@
-input_file = open('/home/mcko_plz/git/aoc20/inputs/d4.txt', 'r')
+input_file = open('inputs/d4.txt', 'r')
 batch = input_file.read().splitlines()
 
 import string
