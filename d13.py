@@ -23,17 +23,14 @@ print((t1-t0)*1000, ' ms')
 
 # part2
 # using CRT because reddit told me to :(
-
 max_bus = max(buses_filt)
 buses_inds = []
 buses_filt.sort()
-
 t0 = time.time()
 N = 1
 for bus in buses_filt:
   N *= bus
 bi = []
-bi_orig = []
 Ni = []
 xi = []
 bNxi = 0
